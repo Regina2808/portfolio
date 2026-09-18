@@ -1,19 +1,38 @@
-function App() {
-  return (
-    <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center p-6">
-      <div className="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700 text-center max-w-md">
-        <h1 className="text-3xl font-bold text-sky-400 mb-4">
-          Tailwind CSS fonctionne ! 🚀
-        </h1>
-        <p className="text-slate-300 mb-6">
-          Si ce bloc est sombre, centré avec du texte bleu et des coins arrondis, ton setup est 100% prêt.
-        </p>
-        <button className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200 shadow-md">
-          C'est parti !
-        </button>
-      </div>
-    </div>
-  )
-}
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "./components/shared/ScrollToTop";
+import Index from "./pages/Index";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Work from "./pages/Work";
+import ProjectDetail from "./pages/ProjectDetail";
+import Contact from "./pages/Contact";
+// import NotFound from "./pages/NotFound";
 
-export default App
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} /> 
+          <Route path="/services" element={<Services />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/work/:slug" element={<ProjectDetail />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="*" element={<NotFound />} />  */}
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;

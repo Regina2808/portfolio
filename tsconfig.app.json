@@ -1,12 +1,19 @@
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "es2023",
-    "lib": ["ES2023", "DOM"],
+   	"target": "es2022",
+   	"lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "esnext",
     "types": ["vite/client"],
+	"strict": true,
+	"forceConsistentCasingInFileNames": true,
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
+
+	/* Configuration des alias d'importation */
+   "paths": {
+      "@/*": ["./src/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
