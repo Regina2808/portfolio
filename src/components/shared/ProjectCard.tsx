@@ -19,7 +19,6 @@ export function ProjectCard({
   year,
   image,
   className,
-  aspectRatio = "landscape",
 }: ProjectCardProps) {
   return (
     <Link

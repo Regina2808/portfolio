@@ -20,13 +20,6 @@ import gallery14 from '@/assets/gallery/gallery-14.jpg';
 import gallery15 from '@/assets/gallery/gallery-15.jpg';
 import gallery16 from '@/assets/gallery/gallery-16.jpg';
 import gallery17 from '@/assets/gallery/gallery-17.jpg';
-import gallery18 from '@/assets/gallery/gallery-18.jpg';
-import gallery19 from '@/assets/gallery/gallery-19.jpg';
-import gallery20 from '@/assets/gallery/gallery-20.jpg';
-import gallery21 from '@/assets/gallery/gallery-21.jpg';
-import gallery22 from '@/assets/gallery/gallery-22.jpg';
-import gallery23 from '@/assets/gallery/gallery-23.jpg';
-import gallery24 from '@/assets/gallery/gallery-24.jpg';
 
 type ImageSize = 'large' | 'medium' | 'small';
 
